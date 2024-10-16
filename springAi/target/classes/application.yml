@@ -1,0 +1,63 @@
+server:
+  port: 26080
+  ssl:
+    enabled: false
+  tomcat:
+    accesslog:
+      enabled: false
+    max-connections: 10
+    max-threads: 2
+    min-spare-threads: 2
+
+
+spring:
+  ai:
+    openai:
+      chat:
+        api-key: "sk-y8wsKGMEytYXYV4aC009D5Ca1c2b447a99E07d5951953d09"
+        base-url: "https://xiaoai.plus"
+  datasource:
+    openai:
+      jdbcUrl: jdbc:mysql://localhost:3306/play_back_test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 'RPKDAdCDYcDBvFRvCLDTqQ=='
+      driverClassName: com.mysql.jdbc.Driver
+      minimumIdle: 40
+      maximumPoolSize: 40
+      maxLifetime: 300000
+      poolName: hikari-cur
+      connectionTimeout: 1000
+      idleTimeout: 250000
+      validationTimeout: 5000
+      connectionTestQuery: SELECT 1
+      dataSourceProperties:
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        cachePrepStmts: true
+  jpa:
+    database:
+      database-platform: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        generate_statistics: true
+        show_sql: true
+        generate_ddl: true
+        format_sql: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG
+
+svr:
+  chnl:
+    third:
+      avscAppKey: "4dc90a9ded16427f"
+      baseUrl: "https://xiaoai.plus"
+      3version: "sk-y8wsKGMEytYXYV4aC009D5Ca1c2b447a99E07d5951953d09"
+      4version: "sk-ETdfdE2R7ST1qqM53b6c13D9B91848D1A72fCaEc897173C7"
